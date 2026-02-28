@@ -111,6 +111,10 @@ header h1 {
     margin-bottom: 0;
 }
 
+.new-chat-btn {
+    text-align: left;
+}
+
 /* Main Chat Area */
 .chat-main {
     flex: 1;
@@ -241,8 +245,37 @@ header h1 {
 }
 
 .sources-content {
-    padding: 0 0.5rem 0.25rem 1.5rem;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.source-tag {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    background: var(--surface-hover);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    font-size: 0.75rem;
     color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.source-tag:hover {
+    border-color: var(--primary-color);
+    color: var(--text-primary);
+}
+
+.source-tag a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.source-tag:has(a):hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
 }
 
 /* Markdown formatting styles */
@@ -446,6 +479,7 @@ header h1 {
 }
 
 /* Sidebar Headers */
+.new-chat-btn,
 .stats-header,
 .suggested-header {
     font-size: 0.875rem;
@@ -462,11 +496,13 @@ header h1 {
     letter-spacing: 0.5px;
 }
 
+.new-chat-btn:focus,
 .stats-header:focus,
 .suggested-header:focus {
     color: var(--primary-color);
 }
 
+.new-chat-btn:hover,
 .stats-header:hover,
 .suggested-header:hover {
     color: var(--primary-color);
